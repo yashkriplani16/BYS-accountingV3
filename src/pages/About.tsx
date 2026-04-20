@@ -74,8 +74,8 @@ const About = () => {
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             {leaders.map((leader, i) => (
-              <ScrollReveal key={leader.name} delay={i * 150}>
-                <div className="text-center p-8 bg-background border border-border shadow-lg">
+              <ScrollReveal key={leader.name} delay={i * 150} className="h-full">
+                <div className="h-full text-center p-8 bg-background border border-border shadow-lg">
                   <div className="w-32 h-32 rounded-full bg-gradient-to-br from-accent/20 to-accent/50 flex items-center justify-center mx-auto mb-6 shadow-lg ring-2 ring-accent/20">
                     <span className="font-heading text-4xl font-bold text-accent">{leader.initials}</span>
                   </div>
@@ -123,8 +123,8 @@ const About = () => {
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {team.map((member, i) => (
-              <ScrollReveal key={member.name} delay={i * 100}>
-                <div className="border border-border p-8 hover:shadow-lg transition-shadow duration-500">
+              <ScrollReveal key={member.name} delay={i * 100} className="h-full">
+                <div className="h-full border border-border p-8 hover:shadow-lg transition-shadow duration-500">
                   <div className="w-24 h-24 rounded-full bg-gradient-to-br from-accent/20 to-accent/40 flex items-center justify-center mb-5 shadow-lg ring-2 ring-accent/20">
                     <span className="font-heading text-3xl font-bold text-accent">
                       {member.name.split(" ").map(n => n[0]).join("")}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -20,14 +21,39 @@ const Contact = () => {
     service: "",
     message: "",
   });
+  const [isSending, setIsSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent",
-      description: "Thank you for reaching out. We'll be in touch within 24 hours.",
-    });
-    setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+    setIsSending(true);
+    try {
+      await emailjs.send(
+        "service_cegjcfh",
+        "template_uhy2y1o",
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message,
+        },
+        { publicKey: "FmcHkHLpQJq7vtmJ0" }
+      );
+      toast({
+        title: "Message Sent",
+        description: "Thank you for reaching out. We'll be in touch within 24 hours.",
+      });
+      setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly by phone.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -97,9 +123,10 @@ const Contact = () => {
                 />
                 <Button
                   type="submit"
-                  className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-none px-10 py-6 text-base w-full sm:w-auto"
+                  disabled={isSending}
+                  className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-none px-10 py-6 text-base w-full sm:w-auto disabled:opacity-60"
                 >
-                  Send Message
+                  {isSending ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </ScrollReveal>
@@ -149,9 +176,18 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Map placeholder */}
-              <div className="mt-10 w-full h-64 bg-secondary flex items-center justify-center border border-border">
-                <p className="text-muted-foreground text-sm">Map Integration Available</p>
+              {/* Google Map */}
+              <div className="mt-10 w-full h-64 border border-border overflow-hidden">
+                <iframe
+                  title="BYS Accounting Office Location"
+                  src="https://maps.google.com/maps?q=23.192833,79.928243&z=15&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </ScrollReveal>
           </div>
