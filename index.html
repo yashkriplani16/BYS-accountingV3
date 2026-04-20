@@ -6,6 +6,16 @@
     <title>BYS Accounting | Expert Bookkeeping &amp; Accountancy Services</title>
     <meta name="description" content="BYS Accounting delivers premium bookkeeping, tax planning, business advisory, and audit services across Australia. Trusted by 500+ clients for over 20 years.">
     <meta name="author" content="BYS Accounting" />
+    <script>
+      (function(){
+        var p = window.location.search.match(/p=([^&]*)/);
+        if(p) window.history.replaceState(null, null,
+          '/' + p[1].replace(/~and~/g,'&') +
+          (window.location.search.match(/q=([^&]*)/) ? '?' + window.location.search.match(/q=([^&]*)/)[1].replace(/~and~/g,'&') : '') +
+          window.location.hash
+        );
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
