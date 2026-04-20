@@ -9,7 +9,6 @@ const navLinks = [
   { label: "About", path: "/about" },
   { label: "Insights", path: "/insights" },
   { label: "Careers", path: "/careers" },
-  { label: "Contact", path: "/contact" },
 ];
 
 const Navbar = () => {
@@ -59,14 +58,13 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <Link to="/contact">
-            <Button
-              variant="outline"
-              className="border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 rounded-none px-6"
-            >
-              Get in Touch
-            </Button>
-          </Link>
+          <Button
+            asChild
+            variant="outline"
+            className="border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 rounded-none px-6"
+          >
+            <Link to="/contact">Get in Touch</Link>
+          </Button>
         </nav>
 
         <button
@@ -94,11 +92,9 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
-            <Link to="/contact" className="mt-2">
-              <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 rounded-none">
-                Get in Touch
-              </Button>
-            </Link>
+            <Button asChild className="mt-2 w-full bg-accent text-accent-foreground hover:bg-accent/90 rounded-none">
+              <Link to="/contact">Get in Touch</Link>
+            </Button>
           </nav>
         </div>
       )}
