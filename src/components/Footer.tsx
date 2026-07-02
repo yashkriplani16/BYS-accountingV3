@@ -65,17 +65,17 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-accent mt-0.5 shrink-0" />
                 <span className="text-sm text-primary-foreground/60">
-                  Level 10, 123 Business Street<br />
-                  Sydney, NSW 2000
+                  619 GF, Part 2 Sector 25 Huda<br />
+                  Panipat, Haryana – 132103
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-accent shrink-0" />
-                <span className="text-sm text-primary-foreground/60">+61 2 1234 5678</span>
+                <span className="text-sm text-primary-foreground/60">+61 2 1234 5678, +91 98264 74318</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-accent shrink-0" />
-                <span className="text-sm text-primary-foreground/60">info@bysaccounting.com.au</span>
+                <span className="text-sm text-primary-foreground/60">accounts@bysaccounting.in</span>
               </li>
             </ul>
           </div>

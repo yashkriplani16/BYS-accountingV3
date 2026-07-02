@@ -144,7 +144,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">Office Address</h4>
-                    <p className="text-muted-foreground text-sm">Level 10, 123 Business Street<br />Sydney, NSW 2000, Australia</p>
+                    <p className="text-muted-foreground text-sm">619 GF, Part 2 Sector 25 Huda<br />Panipat, Haryana – 132103</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -153,7 +153,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">Phone</h4>
-                    <p className="text-muted-foreground text-sm">+61 2 1234 5678</p>
+                    <p className="text-muted-foreground text-sm">+61 421 921 219 , +91 98264 74318</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -162,7 +162,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">Email</h4>
-                    <p className="text-muted-foreground text-sm">info@bysaccounting.com.au</p>
+                    <p className="text-muted-foreground text-sm">accounts@bysaccounting.in</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -180,7 +180,8 @@ const Contact = () => {
               <div className="mt-10 w-full h-64 border border-border overflow-hidden">
                 <iframe
                   title="BYS Accounting Office Location"
-                  src="https://maps.google.com/maps?q=23.192833,79.928243&z=15&output=embed"
+                  src="https://maps.google.com/maps?q=29.36532,76.98087&z=15&output=embed"
+                  //src="https://maps.google.com/maps?q=23.192833,79.928243&z=15&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

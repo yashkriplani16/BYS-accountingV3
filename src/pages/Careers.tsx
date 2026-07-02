@@ -10,32 +10,25 @@ import heroCareers from "@/assets/hero-careers.jpg";
 
 const openings = [
   {
+    title: "Junior Accountant and AP Specialist",
+    type: "Full-Time",
+    location: "Jabalpur, India",
+    department: "Accounting & Finance",
+    desc: "Assist with accounts payable, invoice processing, reconciliations, bookkeeping, and day-to-day accounting operations while gaining hands-on experience.",
+  },
+  {
+    title: "Accounts Executive",
+    type: "Full-Time",
+    location: "Jabalpur, India",
+    department: "Accounting & Finance",
+    desc: "Manage daily accounting activities, maintain financial records, prepare reports, and support month-end and year-end closing processes.",
+  },
+  {
     title: "Senior Accountant",
     type: "Full-Time",
-    location: "Sydney, NSW",
-    department: "Tax & Compliance",
-    desc: "Join our experienced team to manage a diverse portfolio of clients, prepare financial statements, and provide strategic tax advice.",
-  },
-  {
-    title: "Graduate Accountant",
-    type: "Full-Time",
-    location: "Sydney, NSW",
-    department: "Bookkeeping",
-    desc: "Kick-start your career with hands-on experience in bookkeeping, BAS preparation, and cloud accounting platforms.",
-  },
-  {
-    title: "Business Advisory Manager",
-    type: "Full-Time",
-    location: "Melbourne, VIC",
-    department: "Advisory",
-    desc: "Lead advisory engagements, mentor junior team members, and help clients navigate complex business decisions.",
-  },
-  {
-    title: "Payroll Specialist",
-    type: "Part-Time",
-    location: "Remote",
-    department: "Payroll Services",
-    desc: "Manage end-to-end payroll processing for a portfolio of SME clients using modern cloud-based platforms.",
+    location: "Jabalpur, India",
+    department: "Accounting & Finance",
+    desc: "Oversee accounting operations, prepare financial statements, ensure compliance with accounting standards, and mentor junior team members.",
   },
 ];
 
