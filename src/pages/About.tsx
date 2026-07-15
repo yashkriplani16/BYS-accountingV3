@@ -9,15 +9,6 @@ import Footer from "@/components/Footer";
 import heroAbout from "@/assets/hero-about.jpg";
 import aboutStory from "@/assets/about-story.jpg";
 
-const team = [
-  { name: "Benjamin Yu-Sun", role: "Managing Director", bio: "With over 25 years in public practice, Benjamin leads BYS with a vision for excellence and client-first service." },
-  { name: "Sarah Whitfield", role: "Senior Tax Consultant", bio: "Sarah specialises in complex tax structures and has helped hundreds of businesses optimise their tax position." },
-  { name: "David Nguyen", role: "Audit Partner", bio: "David brings rigorous attention to detail and deep expertise in statutory and SMSF auditing." },
-  { name: "Emma Clarke", role: "Business Advisory Manager", bio: "Emma's passion for strategic planning has guided numerous businesses through growth and transformation." },
-  { name: "Michael Torres", role: "Senior Accountant", bio: "Michael's technical proficiency and client focus make him a cornerstone of our accounting team." },
-  { name: "Lisa Chen", role: "Payroll & Compliance Lead", bio: "Lisa ensures seamless payroll operations and compliance for businesses of all sizes." },
-];
-
 const values = [
   { icon: Target, title: "Precision", desc: "We deliver meticulous, error-free work that you can rely on with confidence." },
   { icon: Heart, title: "Integrity", desc: "Honesty and transparency guide every interaction and decision we make." },
@@ -105,34 +96,6 @@ const About = () => {
                   <v.icon size={40} className="text-accent mx-auto mb-4" />
                   <h3 className="font-heading text-xl font-semibold text-primary-foreground mb-3">{v.title}</h3>
                   <p className="text-primary-foreground/60 text-sm">{v.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <span className="text-accent uppercase tracking-widest text-sm font-medium">Our People</span>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-3">Meet the Team</h2>
-            </div>
-          </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {team.map((member, i) => (
-              <ScrollReveal key={member.name} delay={i * 100} className="h-full">
-                <div className="h-full border border-border p-8 hover:shadow-lg transition-shadow duration-500">
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-accent/20 to-accent/40 flex items-center justify-center mb-5 shadow-lg ring-2 ring-accent/20">
-                    <span className="font-heading text-3xl font-bold text-accent">
-                      {member.name.split(" ").map(n => n[0]).join("")}
-                    </span>
-                  </div>
-                  <h3 className="font-heading text-lg font-semibold text-foreground">{member.name}</h3>
-                  <p className="text-accent text-sm mb-3">{member.role}</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{member.bio}</p>
                 </div>
               </ScrollReveal>
             ))}
