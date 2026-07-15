@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Calculator, TrendingUp, Shield, Users, BarChart3, ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
-import CountUp from "@/components/CountUp";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -14,7 +13,6 @@ import heroHome4 from "@/assets/hero-home-4.jpg";
 import heroHome5 from "@/assets/hero-home-5.jpg";
 import heroHome6 from "@/assets/hero-home-6.jpg";
 import aboutStory from "@/assets/about-story.jpg";
-import statsBg from "@/assets/stats-bg.jpg";
 import ctaBg from "@/assets/cta-bg.jpg";
 import blog1 from "@/assets/blog-1.jpg";
 import blog2 from "@/assets/blog-2.jpg";
@@ -196,23 +194,6 @@ const Index = () => {
               </Link>
             </div>
           </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Stats - Parallax */}
-      <section className="relative py-24 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-fixed"
-          style={{ backgroundImage: `url(${statsBg})` }}
-        />
-        <div className="absolute inset-0 bg-primary/70" />
-        <div className="relative z-10 container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <CountUp end={20} suffix="+" label="Years Experience" />
-            <CountUp end={500} suffix="+" label="Clients Served" />
-            <CountUp end={25} label="Team Members" />
-            <CountUp end={98} suffix="%" label="Client Satisfaction" />
-          </div>
         </div>
       </section>
 
