@@ -16,9 +16,24 @@ const values = [
   { icon: Handshake, title: "Partnership", desc: "Your success is our success. We invest in lasting, meaningful relationships." },
 ];
 
+// const leaders = [
+//   { name: "CA Jai Dulani", role: "Co-Founder & Director", initials: "JD", bio: "A Chartered Accountant with deep expertise across the Australian and Indian markets, Jai brings strategic financial insight and a passion for helping businesses thrive internationally." },
+//   { name: "CA Ravi Lathwal", role: "Co-Founder & Director", initials: "RL", bio: "A Chartered Accountant with extensive industry knowledge spanning Australian and Indian markets, Ravi is dedicated to delivering precision-driven financial solutions and building lasting client partnerships." },
+// ];
+
 const leaders = [
-  { name: "CA Jai Dulani", role: "Co-Founder & Director", initials: "JD", bio: "A Chartered Accountant with deep expertise across the Australian and Indian markets, Jai brings strategic financial insight and a passion for helping businesses thrive internationally." },
-  { name: "CA Ravi Lathwal", role: "Co-Founder & Director", initials: "RL", bio: "A Chartered Accountant with extensive industry knowledge spanning Australian and Indian markets, Ravi is dedicated to delivering precision-driven financial solutions and building lasting client partnerships." },
+  {
+    name: "CA Jai Dulani",
+    role: "Co-Founder & Director",
+    bio: "A Chartered Accountant with deep expertise across the Australian and Indian markets, Jai brings strategic financial insight and a passion for helping businesses thrive internationally.",
+    align: "left" as const,
+  },
+  {
+    name: "CA Ravi Lathwal",
+    role: "Co-Founder & Director",
+    bio: "A Chartered Accountant with extensive industry knowledge spanning Australian and Indian markets, Ravi is dedicated to delivering precision-driven financial solutions and building lasting client partnerships.",
+    align: "right" as const,
+  },
 ];
 
 const About = () => {
@@ -54,7 +69,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Leadership */}
+      {/* Leadership
       <section className="py-20 bg-secondary">
         <div className="container mx-auto px-6">
           <ScrollReveal>
@@ -78,7 +93,50 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+      {/* Leadership */}
+<section className="py-20 bg-secondary">
+  <div className="container mx-auto px-6">
+    <ScrollReveal>
+      <div className="text-center mb-16">
+        <span className="text-accent uppercase tracking-widest text-sm font-medium">Leadership</span>
+        <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-3">Meet Our Leaders</h2>
+      </div>
+    </ScrollReveal>
+    <div className="flex flex-col gap-14 max-w-4xl mx-auto">
+      {leaders.map((leader, i) => (
+        <div key={leader.name}>
+          <ScrollReveal delay={i * 150}>
+            <div
+              className={`grid grid-cols-1 md:grid-cols-[280px_1fr] gap-10 items-center ${
+                leader.align === "right" ? "md:[direction:rtl]" : ""
+              }`}
+            >
+              <div
+                className="w-[280px] h-[280px] rounded-full mx-auto md:mx-0 bg-[repeating-linear-gradient(135deg,rgba(20,20,26,0.06)_0px,rgba(20,20,26,0.06)_2px,transparent_2px,transparent_10px)] flex items-center justify-center text-muted-foreground text-xs font-mono [direction:ltr]"
+              >
+                photo placeholder
+              </div>
+              <div className={`[direction:ltr] ${leader.align === "right" ? "md:text-right" : ""}`}>
+                <h3 className="font-heading text-2xl font-semibold text-foreground">{leader.name}</h3>
+                <p className="text-accent text-sm mt-2 mb-4 uppercase tracking-wider">{leader.role}</p>
+                <p
+                  className={`text-muted-foreground text-[15px] leading-relaxed max-w-xl ${
+                    leader.align === "right" ? "md:ml-auto" : ""
+                  }`}
+                >
+                  {leader.bio}
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+          {i < leaders.length - 1 && <div className="h-px bg-border mt-14" />}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Values */}
       <section className="py-20 bg-primary">
