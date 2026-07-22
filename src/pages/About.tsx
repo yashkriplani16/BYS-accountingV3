@@ -59,7 +59,7 @@ const About = () => {
                 Financial Guidance You Can Rely On
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                BYS Accounting is an India-based accounting and advisory firm, providing comprehensive financial services to businesses across India as well as clients in Australia. We manage the full cycle of accounting — from day-to-day bookkeeping through to compliance, tax, and reporting — so you always have a clear, accurate picture of where your business stands.
+                BYS Accounting is an India-based accounting and advisory firm, providing comprehensive financial services to businesses across India as well as clients in Australia. We manage the full cycle of accounting, from day-to-day bookkeeping through to compliance, tax, and reporting, so you always have a clear, accurate picture of where your business stands.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Our approach is built on precision and partnership. We combine strong technical expertise with genuinely responsive service, because we believe the best financial guidance comes from understanding your business as closely as you do. Whether you're a growing business in India or an Australian company looking for a dependable accounting partner, we tailor our approach to what you actually need.

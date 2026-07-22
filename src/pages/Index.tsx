@@ -160,10 +160,10 @@ const Index = () => {
                 Trusted Financial Partners, Built on Precision
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                BYS Accounting is an India-based firm providing accounting and advisory services to businesses in India, alongside clients in Australia. Our approach combines deep technical expertise with a genuinely personal touch — because we believe great accounting starts with understanding your business, not just your balance sheet.
+                BYS Accounting is an India-based firm providing accounting and advisory services to businesses in India, alongside clients in Australia. Our approach combines deep technical expertise with a genuinely personal touch, because we believe great accounting starts with understanding your business, not just your balance sheet.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                We don't just crunch numbers — we build relationships. Our team takes the time to understand your unique challenges and goals, delivering tailored solutions that drive real results, for clients across both India and Australia.
+                We don't just crunch numbers. We build relationships. Our team takes the time to understand your unique challenges and goals, delivering tailored solutions that drive real results, for clients across both India and Australia.
               </p>
               <Link to="/about">
                 <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground rounded-none px-8">

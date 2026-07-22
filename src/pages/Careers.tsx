@@ -46,7 +46,7 @@ const Careers = () => {
       <HeroBanner
         image={heroCareers}
         title="Join Our Team"
-        subtitle="Build a rewarding career at BYS Accounting — where your growth is our priority."
+        subtitle="Build a rewarding career at BYS Accounting, where your growth is our priority."
       />
 
       {/* Why BYS */}
