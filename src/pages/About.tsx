@@ -32,7 +32,7 @@ const leaders = [
     name: "Ravi Lathwal",
     role: "Co-Founder & Director",
     initials: "RL",
-    bio: "A results-driven accounting professional with strong expertise across both Australian and Indian markets, Ravi combines sharp financial acumen with a hands-on approach to client service — helping businesses build stronger financial foundations and make confident, informed decisions.",
+    bio: "A results-driven accounting professional with strong expertise across the Australian and Indian markets, Ravi combines sharp financial acumen with a hands-on approach to building lasting client relationships.",
   },
 ];
 
@@ -96,7 +96,7 @@ const About = () => {
       </section> */}
 
       {/* Leadership — full-bleed split panels */}
-<section className="bg-secondary py-20">
+<section className="bg-secondary pt-20">
   <ScrollReveal>
     <div className="text-center mb-16 px-6">
       <span className="text-accent uppercase tracking-widest text-sm font-medium">Leadership</span>
@@ -135,7 +135,7 @@ const About = () => {
 </section>
 
       {/* Values */}
-      <section className="py-20 bg-primary">
+      <section className="py-20 bg-primary border-t border-primary-foreground/10">
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <div className="text-center mb-16">
