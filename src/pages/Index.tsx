@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Calculator, TrendingUp, Shield, Users, BarChart3, ArrowRight } from "lucide-react";
+import { BookOpen, Calculator, TrendingUp, ClipboardList, Users, BarChart3, Shield, ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -20,11 +20,20 @@ import blog3 from "@/assets/blog-3.jpg";
 
 const heroImages = [heroHome, heroHome2, heroHome3, heroHome4, heroHome5, heroHome6];
 
-const services = [
+const indiaServices = [
   { icon: BookOpen, title: "Bookkeeping", desc: "Accurate, timely records that keep your business running smoothly." },
   { icon: Calculator, title: "Tax Planning", desc: "Strategic tax solutions to minimise liabilities and maximise returns." },
+  { icon: ClipboardList, title: "Management Accounting", desc: "Full-cycle accounting and reporting that turns your numbers into decisions." },
   { icon: TrendingUp, title: "Business Advisory", desc: "Expert guidance to drive growth and navigate complex decisions." },
-  { icon: Shield, title: "Audit & Assurance", desc: "Independent assurance that builds trust with stakeholders." },
+  { icon: Shield, title: "Audit & Assurance", desc: "Independent assurance that builds trust with stakeholders and regulators." },
+  { icon: BarChart3, title: "Financial Reporting", desc: "Clear, compliant reports that tell your financial story with confidence." },
+];
+
+const australiaServices = [
+  { icon: BookOpen, title: "Bookkeeping", desc: "Accurate, timely records that keep your business running smoothly." },
+  { icon: Calculator, title: "Tax Planning", desc: "Strategic tax solutions to minimise liabilities and maximise returns." },
+  { icon: ClipboardList, title: "Management Accounting", desc: "Full-cycle accounting and reporting that turns your numbers into decisions." },
+  { icon: TrendingUp, title: "Business Advisory", desc: "Expert guidance to drive growth and navigate complex decisions." },
   { icon: Users, title: "Payroll Services", desc: "Seamless payroll management so you can focus on what matters." },
   { icon: BarChart3, title: "Financial Reporting", desc: "Clear, compliant reports that tell your financial story with confidence." },
 ];
@@ -34,11 +43,12 @@ const services = [
 const blogs = [
   { image: blog1, title: "2026 Tax Updates: What Your Business Needs to Know", date: "March 28, 2026", category: "Tax Updates" },
   { image: blog2, title: "5 Financial Habits of Successful Small Businesses", date: "March 15, 2026", category: "Articles" },
-  { image: blog3, title: "BYS Accounting Expands Advisory Services", date: "March 1, 2026", category: "Firm News" },
+  { image: blog3, title: "BYS Accounting Launches Dedicated India Operations", date: "March 1, 2026", category: "Firm News" },
 ];
 
 const Index = () => {
   const [currentHero, setCurrentHero] = useState(0);
+  const [activeRegion, setActiveRegion] = useState<"india" | "australia">("india");
   
 
   // Hero slideshow
@@ -147,13 +157,13 @@ const Index = () => {
             <ScrollReveal direction="right">
               <span className="text-accent uppercase tracking-widest text-sm font-medium">About BYS Accounting</span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-3 mb-6">
-                Building Financial Futures Since 2005
+                Trusted Financial Partners, Built on Precision
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                For nearly two decades, BYS Accounting has been the trusted financial partner for businesses and individuals across Australia. Our commitment to excellence, personalised service, and forward-thinking strategies sets us apart.
+                BYS Accounting is an India-based firm providing accounting and advisory services to businesses in India, alongside clients in Australia. Our approach combines deep technical expertise with a genuinely personal touch — because we believe great accounting starts with understanding your business, not just your balance sheet.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                We don't just crunch numbers — we build relationships. Our team of experienced professionals takes the time to understand your unique challenges and goals, delivering tailored solutions that drive real results.
+                We don't just crunch numbers — we build relationships. Our team takes the time to understand your unique challenges and goals, delivering tailored solutions that drive real results, for clients across both India and Australia.
               </p>
               <Link to="/about">
                 <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground rounded-none px-8">
@@ -165,18 +175,37 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services */}
+      {/* Services — India / Australia tabbed */}
       <section className="py-20 bg-primary">
         <div className="container mx-auto px-6">
           <ScrollReveal>
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <span className="text-accent uppercase tracking-widest text-sm font-medium">What We Do</span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mt-3">Our Services</h2>
             </div>
           </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="flex items-center justify-center gap-2 mb-16">
+              {(["india", "australia"] as const).map((region) => (
+                <button
+                  key={region}
+                  onClick={() => setActiveRegion(region)}
+                  className={`px-8 py-3 text-sm uppercase tracking-widest font-medium border transition-all duration-300 ${
+                    activeRegion === region
+                      ? "bg-accent text-accent-foreground border-accent"
+                      : "bg-transparent text-primary-foreground/60 border-primary-foreground/20 hover:text-primary-foreground hover:border-primary-foreground/40"
+                  }`}
+                >
+                  {region === "india" ? "India Services" : "Australia Services"}
+                </button>
+              ))}
+            </div>
+          </ScrollReveal>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, i) => (
-              <ScrollReveal key={service.title} delay={i * 100}>
+            {(activeRegion === "india" ? indiaServices : australiaServices).map((service, i) => (
+              <ScrollReveal key={`${activeRegion}-${service.title}`} delay={i * 100}>
                 <div className="border border-primary-foreground/10 p-8 hover:bg-primary-foreground/5 transition-all duration-500 group hover:border-t-accent hover:border-t-2 hover:scale-[1.02]">
                   <service.icon size={32} className="text-accent mb-5" />
                   <h3 className="font-heading text-xl font-semibold text-primary-foreground mb-3">{service.title}</h3>
@@ -185,6 +214,7 @@ const Index = () => {
               </ScrollReveal>
             ))}
           </div>
+
           <ScrollReveal>
             <div className="text-center mt-12">
               <Link to="/services">

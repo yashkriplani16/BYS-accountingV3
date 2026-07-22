@@ -108,7 +108,7 @@ const Contact = () => {
                     <option value="bookkeeping">Bookkeeping</option>
                     <option value="tax">Tax Planning</option>
                     <option value="advisory">Business Advisory</option>
-                    <option value="audit">Audit & Assurance</option>
+                    <option value="management-accounting">Management Accounting</option>
                     <option value="payroll">Payroll Services</option>
                     <option value="reporting">Financial Reporting</option>
                   </select>
@@ -153,7 +153,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">Phone</h4>
-                    <p className="text-muted-foreground text-sm">+61 421 921 219 , +91 98264 74318</p>
+                    <p className="text-muted-foreground text-sm">+91 98264 74318</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -171,7 +171,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">Office Hours</h4>
-                    <p className="text-muted-foreground text-sm">Monday – Friday: 8:30 AM – 5:30 PM<br />Saturday – Sunday: Closed</p>
+                    <p className="text-muted-foreground text-sm">Australia: Monday – Friday, 10:00 AM – 6:00 PM<br />India (IST): Monday – Friday, 10:00 AM – 6:00 PM<br />Saturday – Sunday: Closed</p>
                   </div>
                 </div>
               </div>

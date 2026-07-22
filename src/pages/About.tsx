@@ -25,14 +25,14 @@ const leaders = [
   {
     name: "CA Jai Dulani",
     role: "Co-Founder & Director",
-    bio: "A Chartered Accountant with deep expertise across the Australian and Indian markets, Jai brings strategic financial insight and a passion for helping businesses thrive internationally.",
-    align: "left" as const,
+    initials: "JD",
+    bio: "A Chartered Accountant with deep expertise across the Australian and Indian markets, Jai brings strategic financial insight and a genuine commitment to helping businesses thrive on both sides of the world.",
   },
   {
-    name: "CA Ravi Lathwal",
+    name: "Ravi Lathwal",
     role: "Co-Founder & Director",
-    bio: "A Chartered Accountant with extensive industry knowledge spanning Australian and Indian markets, Ravi is dedicated to delivering precision-driven financial solutions and building lasting client partnerships.",
-    align: "right" as const,
+    initials: "RL",
+    bio: "A results-driven accounting professional with strong expertise across both Australian and Indian markets, Ravi combines sharp financial acumen with a hands-on approach to client service — helping businesses build stronger financial foundations and make confident, informed decisions.",
   },
 ];
 
@@ -43,7 +43,7 @@ const About = () => {
       <HeroBanner
         image={heroAbout}
         title="About BYS Accounting"
-        subtitle="Two decades of trust, expertise, and unwavering commitment to your financial success."
+        subtitle="Trusted financial guidance, built on precision, integrity, and genuine partnership."
       />
 
       {/* Our Story */}
@@ -56,13 +56,13 @@ const About = () => {
             <ScrollReveal direction="right">
               <span className="text-accent uppercase tracking-widest text-sm font-medium">Our Story</span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-3 mb-6">
-                A Legacy of Financial Excellence
+                Financial Guidance You Can Rely On
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Founded in 2005 by Benjamin Yu-Sun, BYS Accounting began with a simple vision: to provide businesses with the kind of financial guidance that truly makes a difference. What started as a small practice in Sydney has grown into a trusted firm serving over 500 clients.
+                BYS Accounting is an India-based accounting and advisory firm, providing comprehensive financial services to businesses across India as well as clients in Australia. We manage the full cycle of accounting — from day-to-day bookkeeping through to compliance, tax, and reporting — so you always have a clear, accurate picture of where your business stands.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Today, our team of 25+ professionals brings together diverse expertise spanning tax, audit, advisory, and compliance. We combine deep technical knowledge with a genuinely personal approach, because we believe that great accounting is built on great relationships.
+                Our approach is built on precision and partnership. We combine strong technical expertise with genuinely responsive service, because we believe the best financial guidance comes from understanding your business as closely as you do. Whether you're a growing business in India or an Australian company looking for a dependable accounting partner, we tailor our approach to what you actually need.
               </p>
             </ScrollReveal>
           </div>
@@ -95,46 +95,42 @@ const About = () => {
         </div>
       </section> */}
 
-      {/* Leadership */}
-<section className="py-20 bg-secondary">
-  <div className="container mx-auto px-6">
-    <ScrollReveal>
-      <div className="text-center mb-16">
-        <span className="text-accent uppercase tracking-widest text-sm font-medium">Leadership</span>
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-3">Meet Our Leaders</h2>
-      </div>
-    </ScrollReveal>
-    <div className="flex flex-col gap-14 max-w-4xl mx-auto">
-      {leaders.map((leader, i) => (
-        <div key={leader.name}>
-          <ScrollReveal delay={i * 150}>
+      {/* Leadership — full-bleed split panels */}
+<section className="bg-secondary py-20">
+  <ScrollReveal>
+    <div className="text-center mb-16 px-6">
+      <span className="text-accent uppercase tracking-widest text-sm font-medium">Leadership</span>
+      <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-3">Meet Our Leaders</h2>
+    </div>
+  </ScrollReveal>
+
+  <div className="grid grid-cols-1 md:grid-cols-2">
+    {leaders.map((leader, i) => {
+      const dark = i === 0;
+      return (
+        <ScrollReveal key={leader.name} delay={i * 150} className="h-full">
+          <div className={`h-full px-8 py-14 md:px-16 ${dark ? "bg-primary" : "bg-background"}`}>
             <div
-              className={`grid grid-cols-1 md:grid-cols-[280px_1fr] gap-10 items-center ${
-                leader.align === "right" ? "md:[direction:rtl]" : ""
+              className={`w-full h-[300px] mb-14 flex items-center justify-center text-xs font-mono ${
+                dark
+                  ? "bg-[repeating-linear-gradient(135deg,rgba(255,255,255,0.06)_0px,rgba(255,255,255,0.06)_2px,transparent_2px,transparent_10px)] text-primary-foreground/50"
+                  : "bg-[repeating-linear-gradient(135deg,rgba(20,20,26,0.06)_0px,rgba(20,20,26,0.06)_2px,transparent_2px,transparent_10px)] text-muted-foreground"
               }`}
             >
-              <div
-                className="w-[280px] h-[280px] rounded-full mx-auto md:mx-0 bg-[repeating-linear-gradient(135deg,rgba(20,20,26,0.06)_0px,rgba(20,20,26,0.06)_2px,transparent_2px,transparent_10px)] flex items-center justify-center text-muted-foreground text-xs font-mono [direction:ltr]"
-              >
-                photo placeholder
-              </div>
-              <div className={`[direction:ltr] ${leader.align === "right" ? "md:text-right" : ""}`}>
-                <h3 className="font-heading text-2xl font-semibold text-foreground">{leader.name}</h3>
-                <p className="text-accent text-sm mt-2 mb-4 uppercase tracking-wider">{leader.role}</p>
-                <p
-                  className={`text-muted-foreground text-[15px] leading-relaxed max-w-xl ${
-                    leader.align === "right" ? "md:ml-auto" : ""
-                  }`}
-                >
-                  {leader.bio}
-                </p>
-              </div>
+              photo placeholder
             </div>
-          </ScrollReveal>
-          {i < leaders.length - 1 && <div className="h-px bg-border mt-14" />}
-        </div>
-      ))}
-    </div>
+            <span className="font-heading text-6xl font-bold text-accent block mb-4">{leader.initials}</span>
+            <h3 className={`font-heading text-2xl font-semibold ${dark ? "text-primary-foreground" : "text-foreground"}`}>
+              {leader.name}
+            </h3>
+            <p className="text-accent text-sm mt-1 mb-5 uppercase tracking-wider">{leader.role}</p>
+            <p className={`text-[15px] leading-relaxed max-w-md ${dark ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
+              {leader.bio}
+            </p>
+          </div>
+        </ScrollReveal>
+      );
+    })}
   </div>
 </section>
 
