@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin, Facebook, Twitter } from "lucide-react";
+import bysLogo from "@/assets/BYS_Logo_dark.png";
 
 const Footer = () => {
   return (
@@ -7,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1.4fr_1.8fr] gap-8 lg:gap-10">
           <div>
-            <h3 className="font-heading text-2xl font-bold mb-4">BYS Accounting</h3>
+            <img src={bysLogo} alt="BYS Accounting" className="h-10 w-auto mb-4" />
             <p className="text-primary-foreground/60 text-sm leading-relaxed">
               Delivering clarity, confidence, and financial excellence to businesses and individuals across Australia.
             </p>

@@ -8,6 +8,8 @@ import Footer from "@/components/Footer";
 
 import heroAbout from "@/assets/hero-about.jpg";
 import aboutStory from "@/assets/about-story.jpg";
+import jaiHeadshot from "@/assets/Jai_Headshot.png";
+import raviHeadshot from "@/assets/Ravi_Headshot.png";
 
 const values = [
   { icon: Target, title: "Precision", desc: "We deliver meticulous, error-free work that you can rely on with confidence." },
@@ -26,12 +28,14 @@ const leaders = [
     name: "CA Jai Dulani",
     role: "Co-Founder & Director",
     initials: "JD",
+    photo: jaiHeadshot,
     bio: "A Chartered Accountant with deep expertise across the Australian and Indian markets, Jai brings strategic financial insight and a genuine commitment to helping businesses thrive on both sides of the world.",
   },
   {
     name: "Ravi Lathwal",
     role: "Co-Founder & Director",
     initials: "RL",
+    photo: raviHeadshot,
     bio: "A results-driven accounting professional with strong expertise across the Australian and Indian markets, Ravi combines sharp financial acumen with a hands-on approach to building lasting client relationships.",
   },
 ];
@@ -110,14 +114,15 @@ const About = () => {
       return (
         <ScrollReveal key={leader.name} delay={i * 150} className="h-full">
           <div className={`h-full px-8 py-14 md:px-16 ${dark ? "bg-primary" : "bg-background"}`}>
-            <div
-              className={`w-full h-[300px] mb-14 flex items-center justify-center text-xs font-mono ${
-                dark
-                  ? "bg-[repeating-linear-gradient(135deg,rgba(255,255,255,0.06)_0px,rgba(255,255,255,0.06)_2px,transparent_2px,transparent_10px)] text-primary-foreground/50"
-                  : "bg-[repeating-linear-gradient(135deg,rgba(20,20,26,0.06)_0px,rgba(20,20,26,0.06)_2px,transparent_2px,transparent_10px)] text-muted-foreground"
-              }`}
-            >
-              photo placeholder
+            <div className="w-full h-[300px] mb-14 overflow-hidden">
+              <img
+                src={leader.photo}
+                alt={leader.name}
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width={1280}
+                height={720}
+              />
             </div>
             <span className="font-heading text-6xl font-bold text-accent block mb-4">{leader.initials}</span>
             <h3 className={`font-heading text-2xl font-semibold ${dark ? "text-primary-foreground" : "text-foreground"}`}>

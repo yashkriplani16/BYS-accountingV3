@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import bysLogo from "@/assets/BYS_Logo_dark.png";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -35,13 +36,8 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-6">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="font-heading text-2xl font-bold text-primary-foreground tracking-wide">
-            BYS
-          </span>
-          <span className="text-primary-foreground/70 text-sm font-light tracking-widest uppercase">
-            Accounting
-          </span>
+        <Link to="/" className="flex items-center">
+          <img src={bysLogo} alt="BYS Accounting" className="h-9 w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
