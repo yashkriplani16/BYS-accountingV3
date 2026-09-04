@@ -91,8 +91,8 @@ const Footer = () => {
             <a href="#" className="text-xs text-primary-foreground/40 hover:text-accent transition-colors">Terms of Service</a>
             <div className="flex gap-4 ml-4">
               <a href="https://www.linkedin.com/company/bys-accounting/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/40 hover:text-accent transition-colors" aria-label="LinkedIn"><Linkedin size={16} /></a>
-              <a href="#" className="text-primary-foreground/40 hover:text-accent transition-colors" aria-label="Facebook"><Facebook size={16} /></a>
-              <a href="#" className="text-primary-foreground/40 hover:text-accent transition-colors" aria-label="Twitter"><Twitter size={16} /></a>
+             {/* <a href="#" className="text-primary-foreground/40 hover:text-accent transition-colors" aria-label="Facebook"><Facebook size={16} /></a>
+              //<a href="#" className="text-primary-foreground/40 hover:text-accent transition-colors" aria-label="Twitter"><Twitter size={16} /></a> */}
             </div>
           </div>
         </div>
