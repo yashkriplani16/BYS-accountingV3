@@ -12,6 +12,7 @@ import advisory from "@/assets/service-advisory.jpg";
 import audit from "@/assets/service-audit.jpg";
 import payroll from "@/assets/service-payroll.jpg";
 import reporting from "@/assets/service-reporting.jpg";
+import management from "@/assets/service-management.jpg";
 
 type Region = "both" | "india" | "australia";
 
@@ -32,7 +33,7 @@ const services: { title: string; image: string; desc: string; points: string[]; 
   },
   {
     title: "Management Accounting",
-    image: bookkeeping,
+    image: management,
     desc: "Management accounting is the core of what we do. We manage the full financial cycle for our clients, not just recording transactions, but turning your numbers into information you can act on. From monthly reporting to cash flow visibility, we give you the tools to run your business with confidence.",
     points: ["Full-cycle bookkeeping & ledger management", "Monthly management reporting & analysis", "Cash flow monitoring & forecasting", "Budgeting & variance analysis", "Compliance support across GST & statutory obligations"],
     region: "both",

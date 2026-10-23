@@ -1,6 +1,9 @@
 import blog1 from "@/assets/blog-1.jpg";
 import blog2 from "@/assets/blog-2.jpg";
 import blog3 from "@/assets/blog-3.jpg";
+import blog4 from "@/assets/blog-4.jpg";
+import blog5 from "@/assets/blog-5.jpg";
+import blog6 from "@/assets/blog-6.jpg";
 import serviceBookkeeping from "@/assets/service-bookkeeping.jpg";
 import serviceTax from "@/assets/service-tax.jpg";
 import serviceAdvisory from "@/assets/service-advisory.jpg";
@@ -68,7 +71,7 @@ export const posts: Post[] = [
   },
   {
     slug: "cloud-accounting-switch",
-    image: serviceBookkeeping,
+    image: blog4,
     title: "Cloud Accounting: Why Your Business Should Make the Switch",
     date: "February 18, 2026",
     category: "Articles",
@@ -84,7 +87,7 @@ export const posts: Post[] = [
   },
   {
     slug: "ato-focus-areas-2026",
-    image: serviceTax,
+    image: blog5,
     title: "ATO Focus Areas for 2026: Prepare Your Business",
     date: "February 5, 2026",
     category: "Tax Updates",
@@ -100,7 +103,7 @@ export const posts: Post[] = [
   },
   {
     slug: "gst-compliance-essentials",
-    image: serviceAdvisory,
+    image: blog6,
     title: "GST Compliance Essentials for Growing Businesses",
     date: "January 20, 2026",
     category: "Tax Updates",
