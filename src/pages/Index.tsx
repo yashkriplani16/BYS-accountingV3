@@ -12,7 +12,7 @@ import heroHome3 from "@/assets/hero-home-3.jpg";
 import heroHome4 from "@/assets/hero-home-4.jpg";
 import heroHome5 from "@/assets/hero-home-5.jpg";
 import heroHome6 from "@/assets/hero-home-6.jpg";
-import aboutStory from "@/assets/about-story.jpg";
+import aboutStory from "@/assets/about-story2.jpg";
 import ctaBg from "@/assets/cta-bg.jpg";
 import blog1 from "@/assets/blog-1.jpg";
 import blog2 from "@/assets/blog-2.jpg";
