@@ -8,8 +8,8 @@ import Footer from "@/components/Footer";
 
 import heroAbout from "@/assets/hero-about.jpg";
 import aboutStory from "@/assets/about-story.jpg";
-import jaiHeadshot from "@/assets/Jai_Headshot.png";
-import raviHeadshot from "@/assets/Ravi_Headshot.png";
+import jaiHeadshot from "@/assets/Jai_Headshot.jpg";
+import raviHeadshot from "@/assets/Ravi_Headshot.jpg";
 
 const values = [
   { icon: Target, title: "Precision", desc: "We deliver meticulous, error-free work that you can rely on with confidence." },
@@ -29,6 +29,8 @@ const leaders = [
     role: "Co-Founder & Director",
     initials: "JD",
     photo: jaiHeadshot,
+    width: 523,
+    height: 418,
     bio: "A Chartered Accountant with deep expertise across the Australian and Indian markets, Jai brings strategic financial insight and a genuine commitment to helping businesses thrive on both sides of the world.",
   },
   {
@@ -36,6 +38,8 @@ const leaders = [
     role: "Co-Founder & Director",
     initials: "RL",
     photo: raviHeadshot,
+    width: 408,
+    height: 326,
     bio: "A results-driven accounting professional with strong expertise across the Australian and Indian markets, Ravi combines sharp financial acumen with a hands-on approach to building lasting client relationships.",
   },
 ];
@@ -114,14 +118,14 @@ const About = () => {
       return (
         <ScrollReveal key={leader.name} delay={i * 150} className="h-full">
           <div className={`h-full px-8 py-14 md:px-16 ${dark ? "bg-primary" : "bg-background"}`}>
-            <div className="w-full h-[300px] mb-14 overflow-hidden">
+            <div className="w-full mb-14">
               <img
                 src={leader.photo}
                 alt={leader.name}
-                className="w-full h-full object-cover"
+                className="block w-full h-auto"
                 loading="lazy"
-                width={1280}
-                height={720}
+                width={leader.width}
+                height={leader.height}
               />
             </div>
             <span className="font-heading text-6xl font-bold text-accent block mb-4">{leader.initials}</span>
