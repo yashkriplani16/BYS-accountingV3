@@ -9,14 +9,14 @@ import Footer from "@/components/Footer";
 import heroHome from "@/assets/hero-home.jpg";
 import heroHome2 from "@/assets/hero-home-2.jpg";
 import heroHome3 from "@/assets/hero-home-3.jpg";
-import heroHome4 from "@/assets/hero-home-4.jpg";
-import heroHome5 from "@/assets/hero-home-5.jpg";
-import heroHome6 from "@/assets/hero-home-6.jpg";
-import aboutStory from "@/assets/about-story2.jpg";
+import heroHome4 from "@/assets/hero-home-4.webp";
+import heroHome5 from "@/assets/hero-home-5.webp";
+import heroHome6 from "@/assets/hero-home-6.webp";
+import aboutStory from "@/assets/about-story2.webp";
 import ctaBg from "@/assets/cta-bg.jpg";
-import blog1 from "@/assets/blog-1.jpg";
-import blog2 from "@/assets/blog-2.jpg";
-import blog3 from "@/assets/blog-3.jpg";
+import blog1 from "@/assets/blog-1.webp";
+import blog2 from "@/assets/blog-2.webp";
+import blog3 from "@/assets/blog-3.webp";
 
 const heroImages = [heroHome, heroHome2, heroHome3, heroHome4, heroHome5, heroHome6];
 

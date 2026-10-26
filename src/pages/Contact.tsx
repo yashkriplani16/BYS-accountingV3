@@ -10,7 +10,7 @@ import HeroBanner from "@/components/HeroBanner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-import heroContact from "@/assets/hero-contact.jpg";
+import heroContact from "@/assets/hero-contact.webp";
 
 const Contact = () => {
   const { toast } = useToast();

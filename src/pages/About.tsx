@@ -6,7 +6,7 @@ import HeroBanner from "@/components/HeroBanner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-import heroAbout from "@/assets/hero-about.jpg";
+import heroAbout from "@/assets/hero-about.webp";
 import aboutStory from "@/assets/about-story.jpg";
 import jaiHeadshot from "@/assets/Jai_Headshot.jpg";
 import raviHeadshot from "@/assets/Ravi_Headshot.jpg";
