@@ -48,47 +48,16 @@ const blogs = [
 
 const Index = () => {
   const [currentHero, setCurrentHero] = useState(0);
-  const [previousHero, setPreviousHero] = useState<number | null>(null);
-  const [currentHeroVisible, setCurrentHeroVisible] = useState(true);
   const [activeRegion, setActiveRegion] = useState<"india" | "australia">("india");
   
 
   // Hero slideshow
   useEffect(() => {
-    const nextHero = (currentHero + 1) % heroImages.length;
-    const showNextHero = () => {
-      setPreviousHero(currentHero);
-      setCurrentHero(nextHero);
-      setCurrentHeroVisible(false);
-      window.requestAnimationFrame(() => setCurrentHeroVisible(true));
-    };
-    const preloadTimer = window.setTimeout(() => {
-      const nextImage = new Image();
-      nextImage.src = heroImages[nextHero];
-    }, 3000);
-    const slideTimer = window.setTimeout(showNextHero, 5000);
-
-    return () => {
-      window.clearTimeout(preloadTimer);
-      window.clearTimeout(slideTimer);
-    };
-  }, [currentHero]);
-
-  useEffect(() => {
-    if (previousHero === null) return;
-
-    const timer = window.setTimeout(() => setPreviousHero(null), 2000);
-    return () => window.clearTimeout(timer);
-  }, [currentHero, previousHero]);
-
-  const transitionToHero = (nextHero: number) => {
-    if (nextHero === currentHero) return;
-
-    setPreviousHero(currentHero);
-    setCurrentHero(nextHero);
-    setCurrentHeroVisible(false);
-    window.requestAnimationFrame(() => setCurrentHeroVisible(true));
-  };
+    const timer = setInterval(() => {
+      setCurrentHero((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
 
   return (
@@ -97,32 +66,21 @@ const Index = () => {
 
       {/* Hero with Slideshow */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {[
-          ...(previousHero === null ? [] : [previousHero]),
-          currentHero,
-        ].map((heroIndex) => {
-          const isCurrent = heroIndex === currentHero;
-          const visible = isCurrent ? currentHeroVisible : !currentHeroVisible;
-
-          return (
-            <img
-              key={heroIndex}
-              src={heroImages[heroIndex]}
-              alt={`Dramatic landscape ${heroIndex + 1}`}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-in-out ${
-                visible ? "opacity-100" : "opacity-0"
-              }`}
-              style={{
-                animation: isCurrent ? "kenburns 20s ease-in-out infinite" : "none",
-              }}
-              loading={heroIndex === 0 ? "eager" : "lazy"}
-              fetchPriority={heroIndex === 0 ? "high" : "auto"}
-              decoding="async"
-              width={1920}
-              height={1080}
-            />
-          );
-        })}
+        {heroImages.map((img, i) => (
+          <img
+            key={i}
+            src={img}
+            alt={`Dramatic landscape ${i + 1}`}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-in-out ${
+              i === currentHero ? "opacity-100" : "opacity-0"
+            }`}
+            style={{
+              animation: i === currentHero ? "kenburns 20s ease-in-out infinite" : "none",
+            }}
+            width={1920}
+            height={1080}
+          />
+        ))}
         <div className="absolute inset-0 bg-primary/50" />
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-6 leading-tight">
@@ -150,7 +108,7 @@ const Index = () => {
           {heroImages.map((_, i) => (
             <button
               key={i}
-              onClick={() => transitionToHero(i)}
+              onClick={() => setCurrentHero(i)}
               className={`w-3 h-3 rounded-full transition-all duration-500 ${
                 i === currentHero ? "bg-accent w-8" : "bg-primary-foreground/40 hover:bg-primary-foreground/60"
               }`}
